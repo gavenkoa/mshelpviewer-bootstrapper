@@ -78,3 +78,26 @@ https://marketplace.visualstudio.com/items?itemName=Moataz99.MSDNtoUSB
 :   Backs up locally downloaded MSDN in HelpViewer format, later restore on other PC. Comes with
     Microsoft Help Viewer 2.3 installer inside - no need to download 10GiB of Visual Studio.
 
+# Installing HelpViewer without MSVC
+
+Catalog of MSVC dependencies is available here (as of 2025):
+
+* MSVC 2022: https://aka.ms/vs/17/release/channel
+* MSVC 2019: https://aka.ms/vs/16/release/channel
+* MSVC 2017: https://aka.ms/vs/15/release/channel
+* MSVC 2026: https://aka.ms/vs/18/insiders/channel
+
+Inspecting above content you'll find a link to `VisualStudio.vsman`, which lists individual
+components. We are looking for `Microsoft.HelpViewer`:
+
+```
+wget https://download.visualstudio.microsoft.com/download/pr/58af20f6-56e8-48a0-86d3-115fb110097b/a62f2e07999a83639001e342c86d31031c58291aca91ddacd7814adc9878b9a8/help3_vs_net.msi
+wget https://download.visualstudio.microsoft.com/download/pr/58af20f6-56e8-48a0-86d3-115fb110097b/1c965ce309e110a12ee197b84e5104ff3fc50bfd543f91690e0d72a181bc3df6/cab1.cab
+```
+
+Installation is simple:
+
+```
+msiexec /i help3_vs_net.msi
+```
+
