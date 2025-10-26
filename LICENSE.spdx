@@ -1,0 +1,7 @@
+SPDXVersion: SPDX-2.2
+Creator: Oleksandr Gavenko AKA gavenkoa
+
+PackageName: mshelpviewer-bootstrapper
+PackageOriginator: Oleksandr Gavenko AKA gavenkoa
+PackageHomePage: https://github.com/gavenkoa/mshelpviewer-bootstrapper
+PackageLicenseDeclared: BSD-2-Clause
