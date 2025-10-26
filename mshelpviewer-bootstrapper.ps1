@@ -89,7 +89,7 @@ $nameBox = New-Object System.Windows.Forms.TextBox -Property @{
 $layout.Controls.Add($nameBox, 1, 1)
 
 $dirLbl = New-Object System.Windows.Forms.Label -Property @{
-    Text = "Docs dir:"
+    Text = "Help dir:"
     AutoSize = $true
     Font = $font
 }
@@ -230,14 +230,14 @@ $createBtn.Add_Click({
     }
 
     try {
-        Set-ItemProperty -Path "$regCat\en-US" -Name "catalogName" -Value "$cat docs" -Type String
+        Set-ItemProperty -Path "$regCat\en-US" -Name "catalogName" -Value "$cat help" -Type String
     } catch {
         [System.Windows.Forms.MessageBox]::Show("Cannot write '$regCat\en-US catalogName'!`n$($_.Exception.Message)")
         return;
     }
 
     $desktopPath = [System.Environment]::GetFolderPath('Desktop')
-    $shortcutPath = Join-Path $desktopPath "$cat docs.lnk"
+    $shortcutPath = Join-Path $desktopPath "$cat help.lnk"
     $WshShell = New-Object -ComObject WScript.Shell
     $shortcut = $WshShell.CreateShortcut($shortcutPath)
     $shortcut.WorkingDirectory = $appRoot
