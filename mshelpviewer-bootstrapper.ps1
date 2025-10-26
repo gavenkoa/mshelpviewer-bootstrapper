@@ -1,10 +1,10 @@
+
+# Uncomment for tracing / debugging:
+# Set-PSDebug -Trace 1
+
 $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop
 
 Add-Type -AssemblyName 'System.Windows.Forms'
-
-Set-PSDebug -Trace 1
-
-# trap { Write-Error "Error found: $_" }
 
 $isAdmin = ( ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).
         IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator) )
