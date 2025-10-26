@@ -50,6 +50,21 @@ You might find another public URLs, I found above here:
 
     https://services.mtps.microsoft.com/ServiceAPI/catalogs
 
+Few other links, could be sniffed delving into:
+
+    https://services.mtps.microsoft.com/ServiceAPI/products
+
+like:
+
+https://services.mtps.microsoft.com/serviceapi/products/Dd776353/Dd776354/books/Dd253661/en-us
+:   .NET Framework 3.5.
+
+https://services.mtps.microsoft.com/serviceapi/products/Dd776353/Dd776354/books/Dd776355/en-us
+:   .NET Framework 4
+
+https://services.mtps.microsoft.com/serviceapi/products/Dd776353/Gg593679/books/Gg594376/en-us
+:   Windows Driver Kit (2012).
+
 # Supplementary
 
 https://stackoverflow.com/questions/4701193/download-windows-api-reference-msdn-for-offline-use
