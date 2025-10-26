@@ -245,6 +245,41 @@ $createBtn.Add_Click({
     $shortcut.Arguments = "/catalogName $cat /locale en-US"
     $shortcut.IconLocation = "$env:SystemRoot\System32\shell32.dll,-263"
     $shortcut.Save()
+
+    $okForm = New-Object System.Windows.Forms.Form -Property @{
+        Text = "Success"
+        Size = New-Object System.Drawing.Size(400, 300)
+        StartPosition = 'CenterScreen'
+        MinimizeBox = $false
+        MaximizeBox = $false
+        FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::FixedDialog
+    }
+
+    $okText = New-Object System.Windows.Forms.RichTextBox -Property @{
+        Dock = [System.Windows.Forms.DockStyle]::Fill
+        Font = New-Object System.Drawing.Font("Consolas", 10)
+        Multiline = $true
+        WordWrap = $true
+        ReadOnly = $true
+        ScrollBars = [System.Windows.Forms.ScrollBars]::Both
+        Text = @"
+Shortcut '$cat help.lnk' was created on the Desktop.
+
+* Launch it.
+* Navigate to "Manage Content" tab.
+* Choose "Online" or "Disk".
+
+"Disk" accepts URLs, like:
+
+https://services.mtps.microsoft.com/ServiceAPI/catalogs/dev15/en-us
+
+MSVC Help Downloader creates offile MSDN copies: https://github.com/nickdalt/VSHD/
+
+Questions? https://github.com/gavenkoa/mshelpviewer-bootstrapper
+"@
+    }
+    $okForm.Controls.Add($okText)
+    $okForm.ShowDialog()
 })
 
 $closeBtn = New-Object System.Windows.Forms.Button -Property @{
