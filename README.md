@@ -23,6 +23,9 @@ VisualStudio14  LocationPath : %ProgramData%\Microsoft\HelpLibrary2\Catalogs\Vis
 This helper scripts adds necessary files and registry keys to create an independent catalog with
 custom `LocationPath` (several GiB storage for docs).
 
+https://stackoverflow.com/questions/27872590/installing-help-viewer-without-installing-visual-studio
+  Instructions to recreate necessary resources manually.
+
 # Usage
 
 * Run `mshelpviewer-bootstrapper.ps1` elevated (as Admin).
